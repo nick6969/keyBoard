@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwu-N6-iOO">
-                                <rect key="frame" x="87.5" y="133.5" width="200" height="400"/>
+                                <rect key="frame" x="87.5" y="167" width="200" height="333.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2c6-F5-sOK">
                                         <rect key="frame" x="5" y="5" width="190" height="30"/>
@@ -32,7 +32,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fik-XI-7yy">
-                                        <rect key="frame" x="5" y="365" width="190" height="30"/>
+                                        <rect key="frame" x="5" y="298.5" width="190" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8L-5b-Fpj">
-                                <rect key="frame" x="164.5" y="73.5" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="107" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="showAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGh-zO-aSi"/>
@@ -59,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Uwu-N6-iOO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="1Rq-sn-iZq"/>
+                            <constraint firstItem="Uwu-N6-iOO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="1Rq-sn-iZq"/>
                             <constraint firstItem="Uwu-N6-iOO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CVk-qv-Whn"/>
                             <constraint firstItem="Uwu-N6-iOO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LBz-4Q-Ilq"/>
                             <constraint firstItem="n8L-5b-Fpj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hNL-fF-GWE"/>
