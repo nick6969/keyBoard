@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
     }
     
     @IBAction func showAlert(_ sender: UIButton) {
@@ -29,13 +31,14 @@ class ViewController: UIViewController {
     }
 
     
-    // MARK : - Touch
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
-        
-    }
 
 }
 
+extension UIViewController{
+    // MARK : - Touch
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+}
 

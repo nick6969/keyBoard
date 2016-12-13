@@ -50,6 +50,7 @@ extension AppDelegate{
         guard let top = UIApplication.shared.topViewController else{
             return
         }
+        
         let space : CGFloat = 30.0
         let screenHeight = top.view.frame.height
         
@@ -113,7 +114,7 @@ extension UIResponder {
     }
 }
 
-
+// MARK: - Extension UIApplication
 extension UIApplication {
     var topViewController: UIViewController? {
         guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
@@ -123,11 +124,6 @@ extension UIApplication {
         return topViewController
     }
 }
-
-
-
-
-
 
 
 
