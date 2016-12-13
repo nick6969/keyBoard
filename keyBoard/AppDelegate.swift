@@ -46,7 +46,8 @@ extension AppDelegate{
         guard let duration = (noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSValue) as? TimeInterval else {
             return
         }
-        guard let top = UIApplication.shared.topVC(nil) else{
+        
+        guard let top = UIApplication.shared.topViewController else{
             return
         }
         let space : CGFloat = 30.0
@@ -82,7 +83,7 @@ extension AppDelegate{
         guard let duration = (noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSValue) as? TimeInterval else {
             return
         }
-        guard let top = UIApplication.shared.topVC(nil) else{
+        guard let top = UIApplication.shared.topViewController else{
             return
         }
         if top is UIAlertController{
@@ -111,31 +112,26 @@ extension UIResponder {
         UIResponder._currentFirstResponder = self
     }
 }
-// MARK: - Extension UIApplication
+
+
 extension UIApplication {
-    
-    func topVC(_ VC:UIViewController?)->UIViewController?{
-        
-        var topViewController : UIViewController!
-        
-        if VC == nil{
-           topViewController = UIApplication.shared.keyWindow?.rootViewController
-        }
-        if topViewController != nil{
-            return nil
-        }
-        
+    var topViewController: UIViewController? {
+        guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
         while let presentedViewController = topViewController.presentedViewController {
             topViewController = presentedViewController
         }
-        if topViewController is UITabBarController && (topViewController as! UITabBarController).selectedViewController != nil{
-            return UIApplication.shared.topVC((topViewController as! UITabBarController).selectedViewController!)
-        }
         return topViewController
     }
-    
-    
 }
+
+
+
+
+
+
+
+
+
 
 
 
