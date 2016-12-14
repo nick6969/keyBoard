@@ -137,12 +137,16 @@ extension UIApplication {
     }
     
     fileprivate func Recurrence(_ vc:UIViewController?)->UIViewController?{
-        if vc is UITabBarController {
-            return Recurrence((vc as! UITabBarController).selectedViewController)
-        }else if vc is UINavigationController {
-            return Recurrence((vc as! UINavigationController).viewControllers.last)
+        var vcc = vc
+        while let presentedViewController = vcc?.presentedViewController {
+            vcc = presentedViewController
+        }
+        if vcc is UITabBarController {
+            return Recurrence((vcc as! UITabBarController).selectedViewController)
+        }else if vcc is UINavigationController {
+            return Recurrence((vcc as! UINavigationController).viewControllers.last)
         }else{
-            return vc
+            return vcc
         }
     }
 }
