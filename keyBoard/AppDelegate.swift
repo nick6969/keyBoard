@@ -55,7 +55,7 @@ extension AppDelegate{
         
         let space : CGFloat = 30.0
         let screenHeight = top.view.frame.height
-        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions))
+        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions<<16))
         
         if top is UIAlertController{
             // 不處理 因為該 UIAlertController 自己有處理了
@@ -93,7 +93,7 @@ extension AppDelegate{
         guard let top = UIApplication.shared.topViewController else{
             return
         }
-        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions))
+        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions<<16))
 
         if top is UIAlertController{
             // 不處理 因為該 UIAlertController 自己有處理了
