@@ -46,13 +46,16 @@ extension AppDelegate{
         guard let duration = (noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSValue) as? TimeInterval else {
             return
         }
-        
+        guard let animationOptions = (noti.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue else {
+            return
+        }
         guard let top = UIApplication.shared.topViewController else{
             return
         }
         
         let space : CGFloat = 30.0
         let screenHeight = top.view.frame.height
+        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions))
         
         if top is UIAlertController{
             // 不處理 因為該 UIAlertController 自己有處理了
@@ -61,15 +64,15 @@ extension AppDelegate{
                 let rect = first.convert(CGPoint(x:0,y:first.frame.height), to: top.view).y
                 let offsetX = rect + keyboardHeight - screenHeight + space
                 if offsetX > 0 {
-                    UIView.animate(withDuration: duration )
-                    { () -> Void in
+                    UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+                        () -> Void in
                         top.view.frame = CGRect(x: 0.0, y: -offsetX, width: top.view.frame.width, height: top.view.frame.height)
-                    }
+                    }, completion: nil)
                 }else{
-                    UIView.animate(withDuration: duration )
-                    { () -> Void in
+                    UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+                        () -> Void in
                         top.view.frame = CGRect(x: 0, y: 0, width: top.view.frame.width, height: top.view.frame.height)
-                    }
+                    }, completion: nil)
                 }
             }
         }
@@ -84,20 +87,26 @@ extension AppDelegate{
         guard let duration = (noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSValue) as? TimeInterval else {
             return
         }
+        guard let animationOptions = (noti.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue else {
+            return
+        }
         guard let top = UIApplication.shared.topViewController else{
             return
         }
+        let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions))
+
         if top is UIAlertController{
             // 不處理 因為該 UIAlertController 自己有處理了
         }else{
-            UIView.animate(withDuration: duration )
-            { () -> Void in
+            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+                () -> Void in
                 top.view.frame = CGRect(x: 0, y: 0, width: top.view.frame.width, height: top.view.frame.height)
-            }
+            }, completion: nil)
         }
     }
 
 }
+
 
 // MARK: - Extension UIRespinder
 extension UIResponder {
