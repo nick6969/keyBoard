@@ -49,10 +49,10 @@ extension AppDelegate{
         guard let animationOptions = (noti.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue else {
             return
         }
-        guard let top = UIApplication.shared.topViewController else{
+        guard let top = UIApplication.shared.topVC() else{
             return
         }
-        
+
         let space : CGFloat = 30.0
         let screenHeight = top.view.frame.height
         let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions<<16))
@@ -90,7 +90,7 @@ extension AppDelegate{
         guard let animationOptions = (noti.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue else {
             return
         }
-        guard let top = UIApplication.shared.topViewController else{
+        guard let top = UIApplication.shared.topVC() else{
             return
         }
         let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions<<16))
@@ -123,16 +123,31 @@ extension UIResponder {
     }
 }
 
+
 // MARK: - Extension UIApplication
 extension UIApplication {
-    var topViewController: UIViewController? {
+    
+    func topVC()->UIViewController?{
         guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
         while let presentedViewController = topViewController.presentedViewController {
             topViewController = presentedViewController
         }
-        return topViewController
+
+        return Recurrence(topViewController)
+    }
+    
+    fileprivate func Recurrence(_ vc:UIViewController?)->UIViewController?{
+        if vc is UITabBarController {
+            return Recurrence((vc as! UITabBarController).selectedViewController)
+        }else if vc is UINavigationController {
+            return Recurrence((vc as! UINavigationController).viewControllers.last)
+        }else{
+            return vc
+        }
     }
 }
+
+
 
 
 
