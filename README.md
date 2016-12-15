@@ -2,19 +2,13 @@
 
 English version below
 
-一個自己寫的全局鍵盤處理
+ 如何使用
 
-把 AppDelegate 裡面的
-
-extension AppDelegate
-extension UIResponder 
-extension UIApplication
-
- 複製到您的專案
+ 將 keyBoardHandle.swift 複製到您的專案
  
  然後在 AppDelegate didFinishLaunchingWithOptions
  
- 寫上 keyBoardHandleStart()
+ 寫上 ChlKayBoardHandle.Start()
  
  搞定
  
@@ -24,20 +18,14 @@ extension UIApplication
 
 -----------------
 
+How to Use
 
-Write a global keyboard to deal with their own
 
-Put AppDelegate inside
-
-Extended AppDelegate
-Extended UIResponder
-Extended UIApplication
-
-Copy it to your project
+Copy keyBoardHandle.swift to your project
 
 Then AppDelegate didFinishLaunchingWithOptions
 
-Write  keyBoardHandleStart ()
+Write ChlKayBoardHandle.Start()
 
 Get it
 

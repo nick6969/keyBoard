@@ -14,6 +14,7 @@
 		015963D01DFDE66300A21A0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015963CE1DFDE66300A21A0D /* Main.storyboard */; };
 		015963D21DFDE66300A21A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015963D11DFDE66300A21A0D /* Assets.xcassets */; };
 		015963D51DFDE66300A21A0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015963D31DFDE66300A21A0D /* LaunchScreen.storyboard */; };
+		017EC5481E02E02E00AB547C /* keyBoardHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017EC5471E02E02E00AB547C /* keyBoardHandle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		015963D11DFDE66300A21A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015963D41DFDE66300A21A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		015963D61DFDE66300A21A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		017EC5471E02E02E00AB547C /* keyBoardHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyBoardHandle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				015963D11DFDE66300A21A0D /* Assets.xcassets */,
 				015963D31DFDE66300A21A0D /* LaunchScreen.storyboard */,
 				015963D61DFDE66300A21A0D /* Info.plist */,
+				017EC5471E02E02E00AB547C /* keyBoardHandle.swift */,
 			);
 			path = keyBoard;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				015963CD1DFDE66300A21A0D /* ViewController.swift in Sources */,
 				01032D351E0176F700BF3432 /* BViewController.swift in Sources */,
+				017EC5481E02E02E00AB547C /* keyBoardHandle.swift in Sources */,
 				01032D371E01770000BF3432 /* CViewController.swift in Sources */,
 				015963CB1DFDE66300A21A0D /* AppDelegate.swift in Sources */,
 			);
