@@ -9,7 +9,7 @@
 
 import UIKit
 
-let ChlKayBoardHandle = keyBoardHandle()
+let ChlKeyBoardHandle = keyBoardHandle()
 
 final class keyBoardHandle{
     /// 開始鍵盤事件監聽
