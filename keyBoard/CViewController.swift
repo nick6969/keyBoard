@@ -16,20 +16,15 @@ class CViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // 不要使用的鍵盤管理的介面 在viewWillAppear 關閉觀盤管理
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ChlKeyBoardHandle.isEnable = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // 不要使用的鍵盤管理的介面 在viewWillDisappear 重新打開觀盤管理
+    override func viewWillDisappear(_ animated: Bool) {
+        ChlKeyBoardHandle.isEnable = true
     }
-    */
-
+    
 }

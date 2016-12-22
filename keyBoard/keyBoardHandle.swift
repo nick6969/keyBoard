@@ -12,10 +12,24 @@ import UIKit
 let ChlKeyBoardHandle = keyBoardHandle()
 
 final class keyBoardHandle{
-    /// 開始鍵盤事件監聽
-    func Start(){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    
+    fileprivate var _enable = true
+
+    // 是否啟用鍵盤管理
+    var isEnable : Bool {
+        get {
+            return _enable
+        }
+        set{
+            _enable = newValue
+            if newValue{
+                NotificationCenter.default.removeObserver(self)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            }else{
+                NotificationCenter.default.removeObserver(self)
+            }
+        }
     }
     
     fileprivate init(){}

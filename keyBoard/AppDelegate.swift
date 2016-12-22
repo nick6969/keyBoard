@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-         ChlKeyBoardHandle.Start() // 開始鍵盤事件 監聽處理
+        // 開始鍵盤事件 監聽處理
+         ChlKeyBoardHandle.isEnable = true
         
         return true
     }
