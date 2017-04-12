@@ -15,6 +15,9 @@ final class keyBoardHandle{
     
     fileprivate var _enable = true
 
+    // 鍵盤跟 FirstResponder 的距離
+    var space : CGFloat = 30
+    
     // 是否啟用鍵盤管理
     var isEnable : Bool {
         get {
@@ -54,7 +57,7 @@ final class keyBoardHandle{
             return
         }
         
-        let space : CGFloat = 30.0
+
         let screenHeight = top.view.frame.height
         let options = UIViewAnimationOptions.init(rawValue: UInt(animationOptions<<16))
         
@@ -123,7 +126,9 @@ final class keyBoardHandle{
             vcc = presentedViewController
         }
         if vcc is UITabBarController {
-            return Recurrence((vcc as! UITabBarController).selectedViewController)
+//            return Recurrence((vcc as! UITabBarController).selectedViewController)
+            let index = (vcc as! UITabBarController).selectedIndex
+            return Recurrence((vcc as! UITabBarController).viewControllers?[index])
         }else if vcc is UINavigationController {
             return Recurrence((vcc as! UINavigationController).viewControllers.last)
         }else{
