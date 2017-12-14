@@ -44,7 +44,7 @@ final class keyBoardHandle{
         // 第一件事 取得鍵盤的高度以及動畫時間
         // 第二件事 找出誰是 FirstResponder
         // 第三件事 根據鍵盤高度 跟 FirstResponder 的位置 調整畫面
-        guard let keyboardHeight = (noti.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height else {
+        guard let keyboardHeight = (noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
             return
         }
         guard let duration = (noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSValue) as? TimeInterval else {
@@ -126,7 +126,6 @@ final class keyBoardHandle{
             vcc = presentedViewController
         }
         if vcc is UITabBarController {
-//            return Recurrence((vcc as! UITabBarController).selectedViewController)
             let index = (vcc as! UITabBarController).selectedIndex
             return Recurrence((vcc as! UITabBarController).viewControllers?[index])
         }else if vcc is UINavigationController {
